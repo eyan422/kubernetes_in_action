@@ -35,3 +35,19 @@ minikube ssh
 kubectl get nodes
 
 kubectl describe node minikube
+
+kubectl describe node
+
+kubectl get pods
+
+kubectl describe pod pod_name
+
+kubectl expose rc kubia --type=LoadBalancer --name kubia-http
+
+kubectl get services
+
+minikube service kubia-http
+
+kubectl get replicationcontrollers
+
+minikube dashboard
