@@ -125,3 +125,50 @@ kubectl delete ns custom-namespace
 kubectl delete po --all
 
 kubectl delete all --all
+
+# Chapter 4
+kubectl logs mypod
+kubectl logs mypod --previous
+
+kubectl describe po kubia-liveness
+
+kubectl describe rc kubia
+
+gcloud compute ssh gke-kubia-default-pool-b46381f1-zwko
+sudo ifconfig eth0 down
+
+gcloud compute instances reset gke-kubia-default-pool-b46381f1-zwko
+
+kubectl label pod kubia-dmdck app=foo --overwrite
+
+kubectl get pods -L app
+
+kubectl edit rc kubia
+
+kubectl scale rc kubia --replicas=10
+
+kubectl edit rc kubia
+
+kubectl get rc
+
+kubectl delete rc kubia --cascade=orphan
+
+kubectl get rs
+
+kubectl describe rs
+
+kubectl delete rs kubia
+
+kubectl create -f ssd-monitor-daemonset.yaml
+kubectl get ds
+kubectl label node minikube disk=ssd
+kubectl label node minikube disk=hdd --overwrite
+
+kubectl get jobs
+kubectl get job -w
+
+kubectl get po
+
+kubectl logs batch-job-5zl7v
+
+kubectl scale job multi-completion-batch-job --replicas 3
