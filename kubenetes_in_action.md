@@ -172,3 +172,28 @@ kubectl get po
 kubectl logs batch-job-5zl7v
 
 kubectl scale job multi-completion-batch-job --replicas 3
+
+# Chapter 5
+kubectl create -f kubia-svc.yaml
+kubectl get svc
+kubectl exec kubia-49z72 -- curl -s 10.98.113.210
+
+kubectl delete po --all
+
+kubectl exec kubia-3inly -- env
+
+kubectl exec -it pod_name -- bash
+curl http://kubia.default.svc.cluster.local
+curl http://kubia.default
+curl http://kubia
+
+gcloud compute firewall-rules create kubia-svc-rule --allow=tcp:30123
+
+kubectl get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="ExternalIP")].address}'
+
+minikube service service_name -n namespace
+
+minikube addons enable ingress
+
+kubectl get po --all-namespaces
+
