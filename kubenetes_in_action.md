@@ -197,3 +197,5 @@ minikube addons enable ingress
 
 kubectl get po --all-namespaces
 
+kubectl certificate approve <name of the CSR>
+
