@@ -197,5 +197,6 @@ minikube addons enable ingress
 
 kubectl get po --all-namespaces
 
+kubectl exec kubia-2r1qb -- touch /var/ready
 kubectl certificate approve <name of the CSR>
 
